@@ -23,7 +23,7 @@
 
 ---
 
-## 🔍 How **DeepSeek** Works in ReadMind.AI
+## 🔍 How **DeepSeek** Works in ReaDocMind.AI
 **DeepSeek LLM** is an advanced AI model that powers document understanding and question-answering in ReadMind.AI. Here's how it works:
 
 1. **PDF Processing**: The document text is extracted using **PDFPlumber**.
