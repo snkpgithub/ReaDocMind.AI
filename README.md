@@ -19,6 +19,20 @@
 - **Ollama LLM** (for local AI responses)  
 - **Vector Database (InMemory)** (for fast retrieval)  
 - **PDFPlumber** (for document parsing)  
+- **DeepSeek LLM** (for document understanding and question answering)  
+
+---
+
+## 🔍 How **DeepSeek** Works in ReadMind.AI
+**DeepSeek LLM** is an advanced AI model that powers document understanding and question-answering in ReadMind.AI. Here's how it works:
+
+1. **PDF Processing**: The document text is extracted using **PDFPlumber**.
+2. **Text Chunking & Embeddings**: The extracted text is broken into smaller chunks and converted into vector representations using **DeepSeek embeddings**.
+3. **Vector Search**: When a user asks a question, the app searches for relevant document chunks using similarity search.
+4. **AI-Powered Answering**: The retrieved context is fed into **DeepSeek LLM**, which generates concise and factual responses.
+5. **Interactive UI**: The processed information is displayed in a conversational chat interface for easy readability.
+
+DeepSeek enhances **accuracy, relevance, and AI reasoning**, making ReadMind.AI a **powerful research assistant**.  
 
 ---
 
