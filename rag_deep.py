@@ -75,17 +75,24 @@ Context: {document_context}
 Answer:
 """
 
-PDF_STORAGE_PATH = 'document_store/pdfs/'
+#PDF_STORAGE_PATH = 'document_store/pdfs/'
 EMBEDDING_MODEL = OllamaEmbeddings(model="deepseek-r1:1.5b")
 DOCUMENT_VECTOR_DB = InMemoryVectorStore(EMBEDDING_MODEL)
 LANGUAGE_MODEL = OllamaLLM(model="deepseek-r1:1.5b")
 
 # --- Functions ---
-def save_uploaded_file(uploaded_file):
+"""def save_uploaded_file(uploaded_file):
     file_path = PDF_STORAGE_PATH + uploaded_file.name
     with open(file_path, "wb") as file:
         file.write(uploaded_file.getbuffer())
-    return file_path
+    return file_path"""
+import tempfile
+
+def save_uploaded_file(uploaded_file):
+    # Create a temporary file
+    with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_file:
+        temp_file.write(uploaded_file.getbuffer())  # Write file contents
+        return temp_file.name  # Return the temporary file path
 
 def load_pdf_documents(file_path):
     document_loader = PDFPlumberLoader(file_path)
